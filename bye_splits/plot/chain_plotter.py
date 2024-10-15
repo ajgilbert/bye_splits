@@ -60,7 +60,7 @@ class ChainPlotter:
         with open(params.CfgPath, 'r') as afile:
             self.cfg = yaml.safe_load(afile)
 
-        self.out_dir = os.path.join('/eos/user', self.user[0], self.user, 'www/L1')
+        self.out_dir = os.path.join('/grid_mnt/data__data.polcms/cms/gilbert/hgcal-tpg/CMSSW_13_2_6/src/bye_splits/plots', 'www/L1')
 
     def _clopper_pearson(self, k, n, cl=0.95, method='beta'):
         """k is number of successes, n is number of trials"""

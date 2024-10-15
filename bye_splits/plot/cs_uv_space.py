@@ -293,7 +293,7 @@ def create_cs_tab(df):
     return layout([[p_uv, p_xy], [table]])
 
 def plot_all_css(tabs, out):
-    adir = '/eos/user/b/bfontana/www/L1/SeedCSStudies/'
+    adir = '/grid_mnt/data__data.polcms/cms/gilbert/hgcal-tpg/CMSSW_13_2_6/src/bye_splits/plots/'
     output_file(os.path.join(adir, out))
     save(bmd.Tabs(tabs=tabs))
 

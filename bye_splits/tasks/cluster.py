@@ -89,11 +89,14 @@ def cluster(pars, in_seeds, in_tc, out_valid, out_plot, **kw):
         tc = tc[:][thresh]
 
         res = np.concatenate((tc, seeds_indexes, seeds_energies), axis=1)
+
         key = tck.replace("_tc", "_ev")
         cols = tc_cols + ["seed_idx", "seed_energy"]
         assert len(cols) == res.shape[1]
+        print(res, cols)
 
         df = pd.DataFrame(res, columns=cols)
+        df_tcs_store = df.copy(deep=True)
 
         df["cl3d_pos_x"] = df.tc_x * df.tc_mipPt
         df["cl3d_pos_y"] = df.tc_y * df.tc_mipPt
@@ -127,7 +130,8 @@ def cluster(pars, in_seeds, in_tc, out_valid, out_plot, **kw):
 
         cl3d["event"] = event_number.group(1)
         cl3d_cols = ["en", "pt", "x", "y", "z", "Rz", "eta", "phi"]
-        sout[key] = cl3d[cl3d_cols]
+        sout[key] = cl3d
+        sout[key + "_tclist"] = df_tcs_store
         if tck == tckeys[0] and seedk == skeys[0]:
             dfout = cl3d[cl3d_cols + ["event"]]
         else:

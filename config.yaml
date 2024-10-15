@@ -3,7 +3,7 @@ io:
     photons:
       dir: FloatingpointMixedbcstcrealsig4DummyHistomaxxydr015GenmatchGenclustersntuple
       tree: HGCalTriggerNtuple
-      infile: /eos/user/b/bfontana/FPGAs/new_algos/photons_0PU_bc_stc_hadd.root
+      infile: /data_CMS/cms/alves/L1HGCAL/photons_0PU_bc_stc_hadd.root 
       outfile: skim_photons_default.root
     electrons:
       dir: FloatingpointMixedbcstcrealsig4DummyHistomaxxydr015GenmatchGenclustersntuple
